@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>daesuni</title>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link href="css/common.css" rel="stylesheet" />
+		
+		<style>
+			.cs-wrapper		{ width: 100vw; height: 100vh; display: flex; flex-flow: column; }
+			.cs-header		{ background: rgb(34, 51, 68); color: #fff; height: 45px; line-height: 45px; padding: 0px 14px; }
+			.cs-body		{ width: 100%; display: flex; flex: 1; }
+			.cs-aside		{ order: 1; border-right: 3px solid #e1e2e3; flex: 0 0 250px; }
+			.cs-wrap		{ margin: 0; padding: 10px 0px; list-style: none; font-size: 0.75em; line-height: 2; }
+			.cs				{ padding: 0px 15px; border: 1px solid transparent; transition: 0.15s all; }
+			.cs-hover		{ background: rgba(255, 168, 38, 0.1); }
+			.cs-active		{ background-color: rgba(255, 168, 38, 0.2); border-color: rgba(255, 168, 38, 0.4); }
+			/* .cs-folder .cs-title::BEFORE	{ content: ""; background-image: url(images/icon/file.png); background-position: 0 0 !important; width: 16px; height: 16px; display: inline-block; vertical-align: middle; margin-bottom: 2px; margin-right: 4px; } */
+			
+			.cs-contents	{ order: 2; flex: 1; }
+			
+		</style>
+		
+	</head>
+	
+	<body>
+		
+		<div class="cs-wrapper">
+			<div class="cs-header">
+				<i class="fa fa-diamond" aria-hidden="true"></i>&nbsp;&nbsp;Cheatsheet
+				홈으로돌아가기랑 써치
+			</div>
+			
+			<div class="cs-body">
+				<div class="cs-aside">
+					<ul class="cs-wrap"></ul>
+				</div>
+				<div class="cs-contents"></div>
+			</div>
+		</div>
+		
+		<!-- Scripts -->
+		<script src="js/util/jquery.min.js"></script>
+		<!-- <script src="js/jquery.poptrox.min.js"></script> -->
+		<script src="js/util/skel.min.js"></script>
+		<script src="js/util/util.js"></script>
+		<!--[if lte IE 8]><script src="js/ie/respond.min.js"></script><![endif]-->
+		
+		<script src="js/common.js"></script>
+		<script>
+
+			// global variables
+			var csHoverClass = 'cs-hover';
+			var csActiveClass = 'cs-active'
+			var csFolders = [
+				'Design', 'Library', 'Layout', 'D3', '미분류'
+			];
+			var csFiles = [
+				{ 'parent' : 'Design', 'name' : '12345' },
+			];
+			
+			// ready function
+			$(document).ready(function() {
+				
+				var csFolderTarget = $('.cs-wrap');
+				$.each(csFolders, function(k, v) {
+					var $_folder = 
+						$('<li/>').addClass('cs').append(
+							$('<span/>').addClass('cs-title').append(v)
+						);
+					csFolderTarget.append($_folder);
+				});
+				
+				
+				
+				// cs list class controller
+				$('.cs').on('mouseenter', function() {
+					$(this).addClass(csHoverClass);
+				}).on('mouseleave', function() {
+					$(this).removeClass(csHoverClass);
+				}).on('click', function() {
+					$('.cs').removeClass(csActiveClass);
+					$(this).addClass(csActiveClass);
+				});
+				
+			});
+			
+			/* <li class="cs"><span class="cs-title">Design</span></li>
+			<li class="cs"><span class="cs-title">Library</span></li>
+			<li class="cs"><span class="cs-title">Layout</span></li>
+			<li class="cs"><span class="cs-title">D3</span></li>
+			<li class="cs"><span class="cs-title">미분류</span></li> */
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

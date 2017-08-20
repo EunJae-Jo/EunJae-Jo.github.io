@@ -2497,7 +2497,7 @@
 		width: 25%;
 	}
 	
-	#star {
+	#star-fall {
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
@@ -2516,7 +2516,7 @@
 		justify-content: space-between;
 		height: 100%;
 		left: 0;
-		position: fixed;
+		position: absolute;
 		top: 0;
 		width: 35%;
 	}

@@ -1,11 +1,11 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>eunjae</title>
+		<title>daesuni</title>
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="author" content="EUNJAE" />
+		<meta name="author" content="DAESUNG" />
 		<meta name="description" content="">
 		<meta name="keywords" content="">
 		<link href="css/util/patternLock.css" rel="stylesheet" />
@@ -14,8 +14,7 @@
 		
 		<style>
 			/* HEADER */
-			#star				{ position: absolute; }
-			.dg.ac				{ display: none; }
+			.dg.ac						{ display: none; }
 			.copyright .fa-heart		{ color: #ff3737; animation: pound 0.35s infinite alternate; -webkit-animation: pound 0.35s infinite alternate; }
 			@-webkit-keyframes pound 	{ to { transform: scale(1.1); } }
 			@keyframes pound 			{ to { transform: scale(1.1); } }	
@@ -82,11 +81,11 @@
 			<div class="inner">
 				<a href="#" class="image avatar"><img src="images/photo.png" alt="" /></a>
 				<h1 class="profile">
-					<strong>EUNJAE JO</strong>
+					<strong>DAESUNG JEON</strong>
 					Front end developer
 				</h1>
 			</div>
-			<canvas id="star"></canvas>
+			<canvas id="star-fall"></canvas>
 		</header>
 			
 
@@ -105,7 +104,7 @@
 				<h5>Philosophy</h5>
 				<blockquote>Simple is the best.&nbsp;&nbsp;&nbsp;<a target="_blank" href="https://www.becomingminimalist.com/what-is-minimalism/">"Minimalism"</a></blockquote>
 				
-				<h5>I'm EunJae Jo</h5>
+				<h5>I'm Dae-sung JEON</h5>
 				<p>
 					&nbsp;A front-end dev from South Korea, living in Daejeon. I've worked across desktop and mobile and love to take an idea through design iterations and then code it up for others to enjoy, elegantly solving some complex UI/UX problems along the way.<br/>
 					&nbsp;I spend my days building amazing products for the web, share the experience on my codepen, blog and respond to e-mails.
@@ -175,7 +174,7 @@
 				<h2><i class="fa fa-desktop" aria-hidden="true"></i>&nbsp;&nbsp;Recent work</h2>
 				<div class="row">
 					<article class="4u 12u$(xsmall) work-item">
-						<a href="https://github.com/eunjae-jo/marker" data-poptrox="iframe,800x480" class="image fit thumb"><img src="images/project/prj_marker.png" alt="" /></a>
+						<a href="https://github.com/daesuni/marker" data-poptrox="iframe,800x480" class="image fit thumb"><img src="images/project/prj_marker.png" alt="" /></a>
 						<h3>Jquery Marker Plugin</h3>
 						<p>The Jquery marker provides a text highlight function which got mouse drag function. A big feature of Jquery Marker is to ignore HTML tags.</p>
 					</article>
@@ -197,15 +196,15 @@
 				<ul class="labeled-icons">
 					<li>
 						<h3 class="icon fa-instagram"><span class="label">Instagram</span></h3>
-						<a target="_blank" href="https://www.instagram.com/joeunajae">Instagram - https://www.instagram.com/daesuni89</a>
+						<a target="_blank" href="https://www.instagram.com/daesuni89">Instagram - https://www.instagram.com/daesuni89</a>
 					</li>
 					<li>
 						<h3 class="icon fa-envelope-o"><span class="label">Email1</span></h3>
-						Email 1 - joeunajae@gmail.com
+						Email 1 - eotnd2@gmail.com
 					</li>
 					<li>
 						<h3 class="icon fa-envelope-o"><span class="label">Email2</span></h3>
-						Email 2 - joeunajae3@naver.com
+						Email 2 - 01117801068@naver.com
 					</li>
 				</ul>
 			</section>
@@ -540,8 +539,8 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		<footer id="footer">
 			<div class="inner">
 				<ul class="icons">
-					<li><a target="_blank" href="https://github.com/eunjae-jo" class="icon fa-github"><span class="label">Github</span></a></li>
-					<li><a target="_blank" href="https://www.instagram.com/joeunajae" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a target="_blank" href="https://github.com/daesuni" class="icon fa-github"><span class="label">Github</span></a></li>
+					<li><a target="_blank" href="https://www.instagram.com/daesuni89" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 				</ul>
 				<ul class="copyright">
 					<li>Copyright &copy; 2017 DS.J. <span class="fa fa-heart"></span> All Rights Reserved.</li>
@@ -569,14 +568,16 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			  
 		    /************************************************************************************************************/
 		    
+		    // pattern lock
 			var pt = new PatternLock("#pt-lock");
 			pt.checkForPattern('6589',function(){
-				location.href="cheatsheet.html";
+				location.href="cs.html";
 			},function(){
 				$('#pt-info').text('Sorry, try again');
 				pt.reset();
 			});
 		    
+			// secret modal controller
 			$(document).on('click', '#md-open', function() {
 				$('#md-wrap').show(200);
 				$('#pt-info').text('Draw pattern to unlock');
@@ -587,8 +588,9 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 				$('#md-wrap').hide();
 			});
 			
-			var ctx = document.getElementById("myChart").getContext('2d');
-			var myChart = new Chart(ctx, {
+			// skill chart
+			var sctx = document.getElementById("myChart").getContext('2d');
+			var myChart = new Chart(sctx, {
 			    type: 'bar',
 			    data: {
 			        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
